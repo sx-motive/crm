@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Auth from '../views/Auth';
 import Index from '../views/index';
+import Auth from '../views/Auth';
 
 
 export default function Router() {
