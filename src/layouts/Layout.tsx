@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
-import RestoreScroll from './RestoreScroll';
-import Router from './Router';
+import RestoreScroll from '../router/RestoreScroll';
+import Router from '../router/Router';
 
 export default function Layout() {
   return (
