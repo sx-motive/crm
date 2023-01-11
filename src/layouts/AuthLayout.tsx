@@ -1,19 +1,10 @@
+import { ReactNode, useState } from 'react';
 
-import Login from '../components/auth/login'
-import Register from '../components/auth/register'
+interface Props {
+  children?: ReactNode;
+  // any props that come into the component
+}
 
-import { useState } from 'react';
-
-import { getAuth, signInWithEmailAndPassword, } from "firebase/auth";
-
-export default function AuthLayout() {
-  const auth = getAuth();
-
-  const [isLogin, setIsLogin] = useState(true)
-
-  return (
-    <div>
-      {isLogin ? <Login /> : <Register />}
-    </div>
-  )
+export default function AuthLayout({ children }: Props) {
+  return <div className='auth__layout'>{children}</div>;
 }

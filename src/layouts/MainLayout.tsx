@@ -3,12 +3,5 @@ import RestoreScroll from '../router/RestoreScroll';
 import Router from '../router/Router';
 
 export default function MainLayout() {
-  return (
-    <div className='layout'>
-      <BrowserRouter>
-        <Router />
-        <RestoreScroll />
-      </BrowserRouter>
-    </div>
-  );
+  return <div className='layout'></div>;
 }

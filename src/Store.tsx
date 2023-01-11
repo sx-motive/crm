@@ -1,9 +1,13 @@
 import create from 'zustand';
 
-interface StoreState {
-
+interface UserState {
+  user: object;
+  setUser: (obj: object) => void;
 }
 
-const useStore = create<StoreState>((set) => ({
-
+const useUser = create<UserState>((set) => ({
+  user: {},
+  setUser: (obj: object) => set((state) => ({ user: (state.user = obj) })),
 }));
+
+export { useUser };
