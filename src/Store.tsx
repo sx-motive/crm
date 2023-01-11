@@ -1,7 +1,9 @@
 import create from 'zustand';
 
 interface UserState {
-  user: object;
+  user: {
+    email?: string;
+  };
   setUser: (obj: object) => void;
 }
 

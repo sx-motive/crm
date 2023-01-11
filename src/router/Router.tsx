@@ -19,7 +19,7 @@ export default function Router() {
     onAuthStateChanged(auth, (userCredit) => {
       if (userCredit) {
         setUser(userCredit);
-        history('/dashboard');
+        history('/');
       } else {
         history('/auth');
       }
@@ -28,9 +28,9 @@ export default function Router() {
 
   return (
     <Routes>
-      <Route path='/' element={<Index />} />
+      {/* <Route path='/' element={<Index />} /> */}
       <Route path='/auth' element={<Auth />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/' element={<Dashboard />} />
     </Routes>
   );
 }
