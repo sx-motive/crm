@@ -1,5 +1,5 @@
 import { getAuth, signOut } from 'firebase/auth';
-import { useUser } from '../Store';
+import { useUser } from '../store/Store';
 
 import { useNavigate } from 'react-router-dom';
 

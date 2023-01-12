@@ -8,10 +8,11 @@ import Index from '../views/index';
 import Auth from '../views/auth';
 import Dashboard from '../views/dashboard';
 
-import { useUser } from '../Store';
+import { useUser } from '../store/Store';
 
 export default function Router() {
   const auth = getAuth(app);
+  console.warn(auth)
   const history = useNavigate();
   const setUser = useUser((state) => state.setUser);
 
