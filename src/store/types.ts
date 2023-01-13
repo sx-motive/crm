@@ -16,4 +16,3 @@ interface providerData {
   phoneNumber: null | string;
   photoURL: null | string;
 }
-

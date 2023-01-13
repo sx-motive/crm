@@ -2,6 +2,8 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useUser } from '../store/Store';
 
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/layout/header';
+import Sidebar from '../components/layout/sidebar';
 
 export default function Dashboard() {
   const auth = getAuth();
@@ -13,7 +15,15 @@ export default function Dashboard() {
     signOut(auth)
       .then(() => {
         history('/auth');
-        setUser({});
+        setUser({
+          uid: '',
+          email: '',
+          emailVerified: false,
+          isAnonymous: false,
+          providerData: [],
+          createdAt: '',
+          lastLoginAt: '',
+        });
       })
       .catch((error) => {
         console.log(error.message);
@@ -21,7 +31,9 @@ export default function Dashboard() {
   };
 
   return (
-    <section className='dashboard'>
+    <div className='dashboard'>
+      <Header />
+      <Sidebar />
       Welcome brother {user?.email}
       <button
         onClick={logOut}
@@ -29,6 +41,6 @@ export default function Dashboard() {
       >
         Log out
       </button>
-    </section>
+    </div>
   );
 }
