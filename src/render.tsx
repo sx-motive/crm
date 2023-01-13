@@ -10,6 +10,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from './api/firebase';
 
 import './styles/main.scss';
+import { User } from './store/types';
 
 function App() {
   const auth = getAuth(app);
@@ -18,18 +19,10 @@ function App() {
   const setUser = useUser((state) => state.setUser);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (userData) => {
+    onAuthStateChanged(auth, (userData: User) => {
       if (userData) {
         console.log(userData);
-        // setUser({
-        //   uid: userData.uid,
-        //   email: userData.email,
-        //   emailVerified: userData,
-        //   isAnonymous: false,
-        //   providerData: [],
-        //   createdAt: '',
-        //   lastLoginAt: '',
-        // });
+        setUser(userData);
         // history('/');
       } else {
         // history('/auth');
