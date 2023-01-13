@@ -7,10 +7,10 @@ export interface User {
 }
 
 interface providerData {
-  providerId: string;
-  uid: string;
-  displayName: null | string;
-  email: string;
-  phoneNumber: null | string;
-  photoURL: null | string;
+  readonly providerId: string;
+  readonly uid: string;
+  readonly displayName: null | string;
+  readonly email: string;
+  readonly phoneNumber: null | string;
+  readonly photoURL: null | string;
 }
