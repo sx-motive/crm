@@ -19,10 +19,10 @@ function App() {
   const setUser = useUser((state) => state.setUser);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (userData: User) => {
+    onAuthStateChanged(auth, (userData) => {
       if (userData) {
         console.log(userData);
-        setUser(userData);
+        setUser(userData as User);
         // history('/');
       } else {
         // history('/auth');
