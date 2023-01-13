@@ -1,9 +1,9 @@
 import create from 'zustand';
 
-import type { User } from './types'
+import type { User } from './types';
 
 interface UserState {
-  user: User,
+  user: User;
   setUser: (user: User) => void;
 }
 
