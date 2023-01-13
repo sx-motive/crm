@@ -4,8 +4,6 @@ export interface User {
   emailVerified: boolean;
   isAnonymous: boolean;
   providerData: providerData[] | [];
-  createdAt: string;
-  lastLoginAt: string;
 }
 
 interface providerData {
