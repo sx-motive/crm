@@ -1,0 +1,47 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $padding-layout;
+  width: 100%;
+  z-index: 10;
+  .header__container {
+    position: relative;
+    width: 100%;
+    background-color: $white;
+    padding: $padding-block;
+
+    border-radius: $radius-block;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      padding: 0.6rem 1rem;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .header__right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .header__avatar {
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

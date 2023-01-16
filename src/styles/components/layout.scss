@@ -1,0 +1,20 @@
+.layout {
+  position: relative;
+  width: 100%;
+  display: flex;
+
+  .sidebar {
+    position: relative;
+    width: 22%;
+  }
+  .content {
+    position: relative;
+    width: 78%;
+    .main {
+      position: relative;
+      width: 100%;
+      margin-top: 7rem;
+      padding: $padding-layout;
+    }
+  }
+}

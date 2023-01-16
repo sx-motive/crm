@@ -6,25 +6,21 @@ import Register from '../components/auth/Register';
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
   return (
-    <div className='container mx-auto px-4 py-4 mt-20'>
+    <div className='auth__block'>
       {isLogin ? (
         <>
           <Login />
-          <span
-            className='fixed left-1/2 -translate-x-1/2 bottom-20 link'
-            onClick={() => setIsLogin(!isLogin)}
-          >
-            Don't have an account yet? Let's Register!
+          <span className='auth__swaper' onClick={() => setIsLogin(!isLogin)}>
+            Don't have an account yet?{' '}
+            <span className='auth__swaper__link'>Let's Register</span>
           </span>
         </>
       ) : (
         <>
           <Register />
-          <span
-            className='fixed left-1/2 -translate-x-1/2 bottom-20 link'
-            onClick={() => setIsLogin(!isLogin)}
-          >
-            Already have an account? Let's Login!
+          <span className='auth__swaper' onClick={() => setIsLogin(!isLogin)}>
+            Already have an account?{' '}
+            <span className='auth__swaper__link'>Let's Login</span>
           </span>
         </>
       )}

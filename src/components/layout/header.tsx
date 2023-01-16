@@ -2,6 +2,7 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useUser } from '../../store/Store';
 
 import { useNavigate } from 'react-router-dom';
+import { MessageIcon, NotificationIcon } from '../icons';
 
 export default function Header() {
   const auth = getAuth();
@@ -25,44 +26,36 @@ export default function Header() {
       });
   };
   return (
-    <header className='flex flex-row-reverse absolute top-0 right-0 w-full border-b-2 px-6 py-3 bg-slate-100 z10'>
-      <div className='dropdown dropdown-end'>
-        <div tabIndex={0} className='avatar'>
-          <div className='w-16 rounded-full  ring-primary ring-offset-base-100 ring-offset-1'>
-            <img src='https://placeimg.com/192/192/people' />
+    <header>
+      <div className='header__container'>
+        <input type='text' placeholder='Search' />
+
+        <div className='header__right'>
+          <button>Add event</button>
+          <NotificationIcon />
+          <MessageIcon />
+          <div className='dropdown'>
+            <div className='dropdown__btn header__avatar'>
+              <img src='https://xsgames.co/randomusers/avatar.php?g=female' />
+            </div>
+
+            <div className='dropdown__content'>
+              <ul className='dropdown__content__wrap'>
+                <li>
+                  <button className='ghost'>Profile</button>
+                </li>
+                <li>
+                  <button className='ghost'>Settings</button>
+                </li>
+                <li>
+                  <button className='ghost' onClick={logOut}>
+                    Log out
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <ul
-          tabIndex={0}
-          className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'
-        >
-          <div className='btn-group btn-group-vertical'>
-            <button className='btn btn-ghost'>Profile</button>
-            <button className='btn btn-ghost'>Settings</button>
-            <button className='btn btn-ghost' onClick={logOut}>
-              Log out
-            </button>
-          </div>
-          {/* <li>
-            <button className='inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 transition hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300'>
-              Profile
-            </button>
-          </li>
-          <li>
-            <button className='inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 transition hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300'>
-              Settings
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={logOut}
-              className='inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 transition hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300'
-            >
-              Log out
-            </button>
-          </li> */}
-        </ul>
       </div>
     </header>
   );

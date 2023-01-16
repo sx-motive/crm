@@ -30,10 +30,9 @@ export default function Login() {
   };
 
   return (
-    <div className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-wrap flex-col w-72 max-w-full gap-2 text-center'>
-      <span className='block text-2xl mb-2 font-bold'>Login</span>
+    <>
+      <span className='auth__title'>Login</span>
       <input
-        className='input input-bordered w-full'
         onChange={(e) => {
           setLoginData({ ...loginData, email: e.target.value });
         }}
@@ -44,7 +43,6 @@ export default function Login() {
       />
 
       <input
-        className='input input-bordered w-full'
         onChange={(e) => {
           setLoginData({ ...loginData, password: e.target.value });
         }}
@@ -54,9 +52,7 @@ export default function Login() {
         id='password'
       />
 
-      <button onClick={onLogin} className='btn btn-block'>
-        Login
-      </button>
-    </div>
+      <button onClick={onLogin}>Login</button>
+    </>
   );
 }

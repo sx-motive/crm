@@ -1,13 +1,9 @@
-import Header from '../components/layout/Header';
-import Sidebar from '../components/layout/Sidebar';
-import Main from '../components/layout/Main';
+import Layout from '../components/layout/Layout';
 
 export default function Dashboard() {
   return (
-    <div className='dashboard'>
-      <Header />
-      <Sidebar />
-      <Main>Elements</Main>
-    </div>
+    <Layout>
+      <div className='dashboard'>Dashboard</div>
+    </Layout>
   );
 }

@@ -1,0 +1,58 @@
+aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $padding-layout 0 $padding-layout $padding-layout;
+  width: 100%;
+  .sidebar__container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - $padding-layout * 2);
+    background-color: $white;
+    padding: $padding-block;
+
+    border-radius: $radius-block;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .sidebar__header {
+      .sidebar__logo {
+        display: block;
+        background-color: $black;
+        color: $white;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        margin-bottom: 3rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .sidebar__footer {
+      border-top: 1px solid $color-border;
+      padding: 2rem 1rem 1rem 1rem;
+      .sidebar__getting__started {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    button {
+      width: 100%;
+      text-align: left;
+      padding: 1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      svg {
+        margin-top: -0.15rem;
+      }
+    }
+  }
+}

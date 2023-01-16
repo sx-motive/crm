@@ -1,3 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './base/fonts.scss';
+@import './base/vars.scss';
+@import './base/base.scss';
+
+@import './components/auth.scss';
+@import './components/header.scss';
+@import './components/sidebar.scss';
+
+@import './components/layout.scss';

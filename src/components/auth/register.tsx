@@ -4,6 +4,8 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 interface RegisterData {
   username: string;
+  name: string;
+  surname: string;
   email: string;
   password: string;
 }
@@ -15,6 +17,8 @@ export default function Register() {
     email: '',
     password: '',
     username: '',
+    name: '',
+    surname: '',
   });
 
   const onRegister = async () => {
@@ -33,10 +37,9 @@ export default function Register() {
   };
 
   return (
-    <div className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-wrap flex-col w-72 max-w-full gap-2 text-center'>
-      <span className='block text-2xl mb-2 font-bold'>Register</span>
+    <>
+      <span className='auth__title'>Register</span>
       <input
-        className='input input-bordered w-full max-w-xs'
         onChange={(e) => {
           setRegisterData({ ...registerData, username: e.target.value });
         }}
@@ -46,8 +49,28 @@ export default function Register() {
         id='username'
       />
 
+      <div className='auth__column_two'>
+        <input
+          onChange={(e) => {
+            setRegisterData({ ...registerData, name: e.target.value });
+          }}
+          placeholder='Name'
+          type='text'
+          name='name'
+          id='name'
+        />
+        <input
+          onChange={(e) => {
+            setRegisterData({ ...registerData, surname: e.target.value });
+          }}
+          placeholder='Surname'
+          type='text'
+          name='surname'
+          id='surname'
+        />
+      </div>
+
       <input
-        className='input input-bordered w-full max-w-xs'
         onChange={(e) => {
           setRegisterData({ ...registerData, email: e.target.value });
         }}
@@ -58,7 +81,6 @@ export default function Register() {
       />
 
       <input
-        className='input input-bordered w-full max-w-xs'
         onChange={(e) => {
           setRegisterData({ ...registerData, password: e.target.value });
         }}
@@ -69,12 +91,11 @@ export default function Register() {
       />
 
       <button
-        className='btn btn-block'
         disabled={Object.values(registerData).every((x) => !!x) ? false : true}
         onClick={onRegister}
       >
         Register
       </button>
-    </div>
+    </>
   );
 }
